@@ -6,13 +6,13 @@
 
 const findSum = (num1, num2) => {
     let sum = 0;
-    for (let i = num1; i < num2; i += 1) {
+    for (let i = num1; i <= num2; i += 1) {
         sum += i;
     }
     return sum;
 };
 
-findSum(1, 100);
+console.log(findSum(1, 100));
 
 
 // No. 2
@@ -29,7 +29,7 @@ const evenSum = (num1, num2) => {
     return sum;
 };
 
-evenSum(1, 100);
+console.log(evenSum(1, 100));
 
 
 // No. 3
@@ -46,7 +46,7 @@ const oddSum = (num1, num2) => {
     return sum;
 };
 
-oddSum(1, 100);
+console.log(oddSum(1, 100));
 
 
 // No. 4
@@ -57,7 +57,7 @@ const findRemndr = (num1, num2) => {
     return num1 % num2;
 };
 
-findRemndr(9, 4);
+console.log(findRemndr(9, 4));
 
 
 // No. 5
