@@ -4,15 +4,18 @@
 
 // Fill the array with random numbers from the range from 1to 100.
 
-const fillRandom = (start, end) => { 
+const fillRandom = (start, end) => {
     let arr = [];
     for (let i = start; i <= end; i++){
-        arr.push(Math.random(start, end));
+        arr.push(Math.floor(Math.random() * 100) + 1);//random natural numbers
     }
     return arr;
 };
 
 console.log(fillRandom(1, 100));
+
+// const randomNumber = Math.floor(Math.random() * 100) + 1;
+// console.log(randomNumber);
 
 
 // No. 2
@@ -41,7 +44,11 @@ console.log(printChar(12345));
 
 function subArr(...argv) {
     let arr = [];
-
+    let splitSize = 2;
+    for (let i = 0; i < argv.length; i += splitSize){
+        arr.push(argv.slice(i, i + splitSize));
+    }
+    return arr;
 }
 
 console.log(subArr(1, 2, 3, 4, 5, 6));
@@ -56,3 +63,9 @@ console.log(subArr(1, 2, 3, 4, 5, 6));
 // Merge these arrays into a new array:
 
 // [1, 2, 3, 4, 5, 6]
+
+function arrMerge(arr1, arr2) {
+    return arr1.concat(arr2);
+}
+
+console.log(arrMerge([1, 2, 3], [4, 5, 6]));
