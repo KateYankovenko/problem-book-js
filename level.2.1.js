@@ -64,20 +64,27 @@ console.log(toElRemove(5, 9, 5, 4, 5));//[9, 4]
 // [1, 2, 3, 4, 5, 6]
 // Find the sum of the first half of the elements of this array.
 
-const toFindSum = (...argv) => { 
+const toFindSum = (...argv) => {
     let sum = 0;
     const arr = [];
     let split = argv.length / 2;
-    for (let i = 0; i < argv.length; i+=split){
+    for (let i = 0; i < split; i+=split){
         arr.push(argv.slice(i, i + split));
-        console.log(arr);
         let arr1 = arr[0];
-        console.log(arr1);
-            for (let i = 0; i < arr1.length; i ++){
-                sum += i;
-            }
+        for (let i = 0; i < arr1.length; i++){
+            sum += arr1[i];
+        }
     }
     return sum;
 };
 
-console.log(toFindSum(1, 2, 3, 4, 5, 6));
+// const toFindSum = (...argv) => { 
+//     let sum = 0;
+//     const halfIndex = argv.length / 2; 
+//     for (let i = 0; i < halfIndex; i++) {
+//         sum += argv[i]; 
+//     }
+//     return sum;
+// };
+
+console.log(toFindSum(1, 2, 3, 4, 5, 6, 7, 8));
