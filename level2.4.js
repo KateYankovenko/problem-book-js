@@ -64,7 +64,7 @@ const toUpperCaseConv = str => {
     let upStr = "";
     let count = 0;
     for (let i = 0; i < str.length; i++){
-        if (str[i].match(/[a-zA-Z]/)) { // Check if it's a letter
+        if (str[i].match(/[a-zA-Z]/)) { // Check if it's a letter; (for digits: /^[0-9]+$/)
             count++;
             if (count % 2 !== 0) { // Check if it's the first, third, etc., letter
                 upStr += str[i].toUpperCase();
