@@ -61,15 +61,18 @@ console.log(toNumPrint(234567892));//5
 // 'AbCdE'
 
 const toUpperCaseConv = str => { 
-    let newStr = str.slice("");
     let upStr = "";
-    console.log(newStr);
-
-    for (let i = 0; i < newStr.length; i++){
-        if (i % 2 === 0) {
-            upStr += newStr[i];
+    let count = 0;
+    for (let i = 0; i < str.length; i++){
+        if (str[i].match(/[a-zA-Z]/)) { // Check if it's a letter
+            count++;
+            if (count % 2 !== 0) { // Check if it's the first, third, etc., letter
+                upStr += str[i].toUpperCase();
+            } else {
+                upStr += str[i];
+            }
         } else {
-            upStr += newStr[i].toUpperCase();
+            upStr += str[i];
         }
     }
     return upStr;
@@ -88,16 +91,20 @@ console.log(toUpperCaseConv("abcde"));
 const toCapitalize = str => { 
     let newStr = "";
     const strArr = str.split(" ");
-    console.log(strArr);
+
     for (let i = 0; i < strArr.length; i++){
         if (strArr[i]) {
             let a = strArr[i];
-            newStr += a[0].toUpperCase();
-            newStr += a[i];
-            newStr += a[i];
+            newStr += a[0].toUpperCase() + a.slice(1) + " ";//slice(1) extracts a portion of the string a starting from index 1 (the second character) to the end of the string
+
         }
     }
-    return newStr;
+    return newStr.trim();//removes leading and trailing whitespace characters from a string
 };
 
 console.log(toCapitalize('aaa bbb ccc'));
+
+
+// const word = "hello";
+// const capitalizedWord = word[0].toUpperCase() + word.slice(1);
+// console.log(capitalizedWord); // Output: "Hello"
