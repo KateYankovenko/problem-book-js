@@ -52,3 +52,34 @@
 // 	},
 // ];
 // Find the sum of the elements of this structure.
+
+const findElSum = (data) => { 
+ 
+    let val = data.flatMap(el => Object.values(el).flat());
+    console.log(val);
+
+    const sum = val.reduce((previousValue, el) => {
+        return previousValue + el;
+    }, 0);
+    return sum;
+};
+
+let data = [
+	{
+		1: [1, 2, 3],
+		2: [1, 2, 3],
+		3: [1, 2, 3],
+	},
+	{
+		1: [1, 2, 3],
+		2: [1, 2, 3],
+		3: [1, 2, 3],
+	},
+	{
+		1: [1, 2, 3],
+		2: [1, 2, 3],
+		3: [1, 2, 3],
+	},
+];
+
+console.log(findElSum(data));
