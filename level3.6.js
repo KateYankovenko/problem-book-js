@@ -81,3 +81,38 @@ console.log(mergeElems(123, 456, 789));
 // 	},
 // ];
 // Find the sum of the elements of this structure.
+
+
+const findElSum = (data) => { 
+    let sum = 0;
+
+    // Iterate over each object in the data array
+    for (let i = 0; i < data.length; i++) {
+        // Iterate over each property of the current object
+        for (let key in data[i]) {
+            // Add the value of each property to the sum
+            sum += data[i][key];
+        }
+    }
+    return sum;
+};
+
+let data = [
+	{
+		1: 11,
+		2: 12,
+		3: 13,
+	},
+	{
+		1: 21,
+		2: 22,
+		3: 23,
+	},
+	{
+		1: 24,
+		2: 25,
+		3: 26,
+	},
+];
+
+console.log(findElSum(data));
