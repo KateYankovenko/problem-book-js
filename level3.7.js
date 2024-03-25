@@ -148,13 +148,18 @@ console.log(removeVowels("let me sing a song"));
 // Given a string. Capitalize the last letter of each word on this line.
 
 const cptlzLast = str => {
-    let newStr = "";
+    let newStr = str.split(" ");
    
-    for (let i = 0; i < str.split(" ").length; i++){
-        
-    }
+    newStr.forEach((word, index) => {
+        // Check if the word is not empty
+        if (word.length > 0) {
+            // Capitalize the last letter of the word
+            const lastLetter = word.slice(-1).toUpperCase();
+            newStr[index] = word.slice(0, -1) + lastLetter;
+        }
+    });
 
-    return newStr;
+    return newStr.join(' ');
 };
 
 console.log(cptlzLast("Write a letter to your teacher!"));
