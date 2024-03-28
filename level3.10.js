@@ -37,22 +37,19 @@ console.log(checkRepeat(55, 34, 55, 34, 66, 66));
 // Given an array of numbers.Leave numbers consisting of different digits
 // in it, and delete the rest.
 
-const leaveDiffDigits = (...args) => { 
-    let arr = String([...args]).split(",");
-    console.log(arr);
 
-    let newArr = [];
-    
-    for (let i = 0; i < arr.length; i++) {
-        const digit = arr[i][0];
-        if (arr[i][0] !== arr[i][1]) {
-            newArr.push(arr[i]);
-        }
-    }
-    return newArr;
+const leaveDiffDigits = (...args) => {
+    return args.filter(num => {
+        const digits = String(num).split('');
+        return new Set(digits).size === digits.length;
+    });
 };
 
-console.log(leaveDiffDigits(23, 55, 67, 88, 90, 990));
+//a Set from these digits, which automatically removes duplicates. 
+//  Compare the size of the Set with the length of the original digits array.
+//  If they are equal, it means all digits are unique, and we keep the number.
+
+console.log(leaveDiffDigits(23, 55, 67, 88, 90, 990, 45));
 
 // No. 6
 
