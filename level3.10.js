@@ -29,8 +29,17 @@ console.log(checkRepeat(55, 34, 55, 34, 66, 66));
 
 // No. 4
 
-// A number is given.Get an array with the position of all the digits 3
-// in this number except the first and last.
+const getPosition = num => {
+    const arr = String(num).split("").map(el => Number(el));
+    
+    // Filter out the index of digit 3 except for the first and last positions
+    const positions = arr.map((el, i) => el === 3 && i !== 0 && i !== arr.length - 1 ? i : -1)
+                          .filter(index => index !== -1);//except for the first and last positions
+
+    return positions;
+};
+
+console.log(getPosition(345637833903));
 
 // No. 5
 
