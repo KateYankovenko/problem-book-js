@@ -22,10 +22,9 @@ console.log(checkRepeat(55, 34, 55, 34, 66, 66));
 // Given an array and a number.Leave in the array only those numbers
 // that are divisors of the given number.
 
-const leaveDivisors = (num, ...args) => { 
-    let newArr = [];
-    args.find((el, i, arr) => el % 2 === 0 ? newArr.push(el) : "Not");
-    return newArr;
+const leaveDivisors = (num, ...args) => {
+    // Filter out elements that are divisors of the given number
+    return args.filter(el => el % num === 0);
 };
 
 console.log(leaveDivisors(22, 567, 890, 45, 44, 88, 664));
@@ -42,7 +41,7 @@ const getArr = (num1, num2) => {
     const concatArr = arr1.concat(arr2);
     
    let newArr = concatArr.filter((el, i, arr) => arr.indexOf(el) !== i);
-    console.log(newArr);
+    return newArr;
 };
 
 console.log(getArr(2345, 467582));
