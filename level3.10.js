@@ -22,10 +22,30 @@ console.log(checkRepeat(55, 34, 55, 34, 66, 66));
 // Given an array and a number.Leave in the array only those numbers
 // that are divisors of the given number.
 
+const leaveDivisors = (num, ...args) => { 
+    let newArr = [];
+    args.find((el, i, arr) => el % 2 === 0 ? newArr.push(el) : "Not");
+    return newArr;
+};
+
+console.log(leaveDivisors(22, 567, 890, 45, 44, 88, 664));
+
 // No. 3
 
 // Two numbers are given.Get an array of digits that are in both one
 // and the second number.
+
+const getArr = (num1, num2) => { 
+  
+    const arr1 = String(num1).split("").map(el => Number(el));
+    const arr2 = String(num2).split("").map(el => Number(el));
+    const concatArr = arr1.concat(arr2);
+    
+   let newArr = concatArr.filter((el, i, arr) => arr.indexOf(el) !== i);
+    console.log(newArr);
+};
+
+console.log(getArr(2345, 467582));
 
 // No. 4
 
