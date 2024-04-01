@@ -41,10 +41,28 @@ console.log(dayOfWeek);
 // Make a function that will take seconds as a parameter and return the number
 // of days corresponding to these seconds.
 
+function secondsToDays(seconds) {
+    const secondsInDay = 24 * 60 * 60; // Total number of seconds in a day
+    return seconds / secondsInDay; // Calculate number of days
+}
+
+console.log(secondsToDays(86400));
+
 // No. 4
 
 // Make a function that takes a number and a string as parameters and truncates
 // this string to the length specified by the first parameter.
+
+function truncateString(str, maxLength) {
+
+    if (str.length > maxLength) {
+        return str.substring(0, maxLength) + "...";
+    } else {
+        return str;
+    }
+}
+
+console.log(truncateString("Hello, world!", 5));
 
 // No. 5
 
